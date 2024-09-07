@@ -1,0 +1,40 @@
+<template>
+    <header>
+        <div class="slds-grid slds-wrap">
+            <div class="slds-col slds-size_1-of-1 slds-medium-size_3-of-12 slds-large-size_3-of-12">
+                <img src="" alt="profile pic" class="profile_pic"/>
+            </div>
+            <div class="slds-col slds-size_1-of-1 slds-medium-size_3-of-12 slds-large-size_6-of-12 mobile-text-center m-auto">
+                <div class="nameHeading mobile-text-center">{userDetails.NAME}</div>
+                <div class="roleHeading mobile-text-center">{userDetails.ROLE}</div>
+                <div>
+                    <ul class="small_font">
+                        <li class="slds-var-m-bottom_small">
+                            <a href={emailLink} class="link">
+                            <lightning-icon icon-name="utility:email" size="small" alternative-text="Email"></lightning-icon>{userDetails.EMAIL}
+                        </a>
+                        </li>
+                   
+                        <li class="slds-var-m-bottom_small">
+                            <a href={phoneLink} class="link">
+                            <lightning-icon icon-name="utility:call" size="small" alternative-text="Phone"></lightning-icon>{userDetails.PHONE}
+                        </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="slds-col slds-size_1-of-1 slds-medium-size_3-of-12 slds-large-size_3-of-12 m-auto">
+                <ul class="small_font">
+                    <template for:each={socialDetails} for:item="item">
+                        <li class="slds-var-m-bottom_small" key={item.type}>
+                            <a href={item.link} target="_blank" class="link">
+                             <img src={item.icon} alt={item.type} width="20px" class="slds-var-m-right_small"/>
+                            <span>{item.label}</span>
+                            </a>
+                        </li>
+                    </template>
+                </ul>
+            </div>
+        </div>
+    </header>
+</template>

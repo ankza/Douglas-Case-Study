@@ -1,0 +1,13 @@
+<template>
+    <section>
+        <div><h2>{details.Heading}</h2></div>
+        <div><p class="font 16">
+            {details.DESCRIPTION}
+        </p></div>
+        <br>
+        <div>EDUCATION</div>
+        <template for:each={details.EDUCATION} for:item="edu">
+            <div key={edu.key}><div>{edu.key}</div><div>{edu.value}</div><br></div> 
+        </template>
+    </section>
+</template>
