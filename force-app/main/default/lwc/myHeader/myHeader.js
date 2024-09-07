@@ -1,6 +1,7 @@
 import { LightningElement,api } from 'lwc';
 
 export default class MyHeader extends LightningElement {
+    /*comment*/
     @api socialDetails
    @api userDetails
 
